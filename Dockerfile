@@ -9,6 +9,7 @@ COPY . .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+RUN mkdir -p /app/static/uploads && chmod -R 777 /app/static/uploads
 
 # Set environment variables to prevent Python from writing bytecode and buffering
 ENV PYTHONUNBUFFERED=1
