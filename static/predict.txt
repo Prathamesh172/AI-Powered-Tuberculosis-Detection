@@ -1,0 +1,76 @@
+predict
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TB Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container predict-container">
+        <h1>Upload a Chest X-ray for TB Detection</h1>
+
+        <form action="/predict" method="post" enctype="multipart/form-data" id="upload-form">
+            <label for="file-input" class="custom-file-upload">
+                <i class="fas fa-cloud-upload-alt"></i> Choose File
+            </label>
+            <input type="file" name="file" id="file-input" required>
+            <button type="submit" class="predict-btn">
+                <i class="fas fa-flask"></i> Predict
+            </button>
+        </form>
+
+        <div id="image-preview" class="image-preview-area"></div>
+
+        {% if prediction %}
+            <div class="result fade-in">
+                <h2>{{ prediction }}</h2>
+                {% if image_path %}
+                    <img src="{{ image_path }}" id="uploaded-image" alt="Uploaded Image" class="uploaded-image">
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <a href="/" class="btn back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fileInput = document.getElementById('file-input');
+            const preview = document.getElementById('image-preview');
+            const uploadForm = document.getElementById('upload-form');
+            const resultDiv = document.querySelector('.result');
+
+            fileInput.addEventListener('change', function(event) {
+                preview.innerHTML = '';
+                const file = event.target.files[0];
+                if (file) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = URL.createObjectURL(file);
+                    imgElement.classList.add('preview-image'); // Add a class for styling
+                    preview.appendChild(imgElement);
+                }
+                if (resultDiv) resultDiv.classList.remove('fade-in'); // Remove previous result animation
+            });
+
+            uploadForm.addEventListener('submit', function() {
+                preview.innerHTML = "";
+                const uploadedImg = document.getElementById('uploaded-image');
+                if (uploadedImg) uploadedImg.remove();
+                // Optionally add a loading indicator here
+            });
+
+            // Initial fade-in for elements on page load (if prediction exists)
+            if (resultDiv) {
+                setTimeout(() => {
+                    resultDiv.classList.add('fade-in');
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

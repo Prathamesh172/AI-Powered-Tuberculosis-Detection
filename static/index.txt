@@ -1,0 +1,103 @@
+index
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuberculosis Detection AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">TB Detection AI</a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/predict">Predict</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#learn-more">Learn More</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>AI-Powered Tuberculosis Detection</h1>
+        <p>Detect TB from chest X-rays with cutting-edge AI technology.</p>
+        <a href="/predict" class="btn hero-btn">
+            <i class="fas fa-upload"></i> Upload X-ray
+        </a>
+    </div>
+
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <i class="fas fa-upload fa-3x"></i>
+                <h3>Upload X-ray</h3>
+                <p>Select and upload a chest X-ray image through our secure platform.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-cog fa-3x"></i>
+                <h3>AI Analysis</h3>
+                <p>Our advanced AI model analyzes the image for signs of tuberculosis.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-check-circle fa-3x"></i>
+                <h3>Instant Prediction</h3>
+                <p>Receive a prediction about the presence of TB within seconds.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="features" class="features">
+        <h2>Key Features</h2>
+        <div class="feature-box">
+            <i class="fas fa-bolt fa-2x"></i>
+            <h3>⚡ Instant Results</h3>
+            <p>Upload an X-ray and get predictions instantly.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-chart-bar fa-2x"></i>
+            <h3>📊 Reliable Accuracy</h3>
+            <p>Trained on thousands of medical images for high accuracy.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-stethoscope fa-2x"></i>
+            <h3>🔬 Medical Assistance</h3>
+            <p>Supports doctors in early TB diagnosis and treatment planning.</p>
+        </div>
+    </div>
+
+    <section id="learn-more" class="learn-more">
+        <h2>Learn More</h2>
+        <div class="learn-more-content">
+            <div class="learn-more-item">
+                <h3>About Tuberculosis</h3>
+                <p>Tuberculosis (TB) is a contagious infection that usually attacks the lungs. It is caused by a type of bacteria called Mycobacterium tuberculosis. TB is spread through the air when people with lung TB cough, sneeze or otherwise transmit respiratory fluids.</p>
+                <p>For more detailed information, visit the <a href="https://www.who.int/health-topics/tuberculosis" target="_blank" style="color: #ff6b6b; text-decoration: underline;">World Health Organization (WHO)</a>.</p>
+            </div>
+            <div class="learn-more-item">
+                <h3>AI in Healthcare</h3>
+                <p>Artificial intelligence is revolutionizing healthcare by providing tools for faster diagnosis, personalized treatment, and improved patient outcomes. Our TB detection AI leverages advanced machine learning algorithms to analyze medical images with high accuracy.</p>
+                <p>Explore more about AI in healthcare on platforms like <a href="https://www.nih.gov/news-events/news-releases/nih-launches-aim-initiative-artificial-intelligence-health" target="_blank" style="color: #ff6b6b; text-decoration: underline;">National Institutes of Health (NIH)</a>.</p>
+            </div>
+            <div class="learn-more-item">
+                <h3>Our AI Model</h3>
+                <p>Our Tuberculosis detection model is based on a deep convolutional neural network trained on a large dataset of chest X-ray images. This allows the AI to identify subtle patterns indicative of TB with a high degree of confidence. We are continuously working to improve the accuracy and reliability of our model.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Learn more about Tuberculosis: <a href="https://www.who.int/health-topics/tuberculosis" target="_blank" style="color: #ff6b6b; text-decoration: underline;">WHO Tuberculosis Info</a></p>
+    </footer>
+
+</body>
+</html>

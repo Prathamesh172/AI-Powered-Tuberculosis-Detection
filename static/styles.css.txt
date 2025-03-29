@@ -1,0 +1,511 @@
+styles.css
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #4e54c8, #8f94fb); /* Cool Gradient */
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.6;
+    position: relative; /* For the hero overlay */
+    overflow-x: hidden; /* Prevent horizontal scrollbar during animations */
+}
+
+/* Header and Navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px 0;
+    position: sticky; /* Keep navigation at the top on scroll */
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navbar .nav-links li a:hover {
+    color: #ff6b6b;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    background: url("https://source.unsplash.com/1600x900/?medical,healthcare") no-repeat center center/cover;
+    color: white;
+    padding: 180px 20px; /* Increased padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    position: relative; /* For overlay */
+    opacity: 1; /* Removed animation for hero */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 50px; /* Larger title */
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+    max-width: 800px; /* Limit text width for better readability */
+}
+
+.hero .hero-btn {
+    font-size: 18px; /* Slightly larger hero button */
+    padding: 15px 35px;
+    background: linear-gradient(45deg, #ff6b6b, #ff4757); /* Gradient button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: pulse 1.5s ease-in-out 0.7s infinite alternate;
+    text-decoration: none; /* Removed underline */
+}
+
+.hero .hero-btn i {
+    margin-right: 10px;
+}
+
+.hero .hero-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.03); }
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 80px 20px;
+    text-align: center;
+    opacity: 1; /* Removed animation */
+    transform: translateY(0); /* Removed animation */
+}
+
+.how-it-works h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.how-it-works .steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.how-it-works .step {
+    width: calc(33% - 40px);
+    padding: 30px;
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    opacity: 1; /* Removed animation */
+    transform: translateY(0); /* Removed animation */
+}
+
+.how-it-works .step:hover {
+    transform: translateY(-5px);
+}
+
+.how-it-works .step i {
+    margin-bottom: 20px;
+    color: #ff9f43; /* Accent color */
+}
+
+.how-it-works .step h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.how-it-works .step p {
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly darker background */
+    opacity: 1; /* Removed animation */
+    transform: translateY(0); /* Removed animation */
+}
+
+.features h2 {
+    width: 100%;
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.features .feature-box {
+    width: calc(33% - 40px); /* Adjust for spacing */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    opacity: 1; /* Removed animation */
+    transform: translateX(0); /* Removed animation */
+}
+
+.features .feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.features .feature-box i {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #1dd1a1; /* Another accent color */
+}
+
+.features .feature-box h3 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.features .feature-box p {
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+/* Learn More Section */
+.learn-more {
+    padding: 80px 20px;
+    text-align: center;
+    opacity: 1; /* Removed animation */
+    transform: translateY(0); /* Removed animation */
+}
+
+.learn-more h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.learn-more-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.learn-more-item {
+    width: calc(33% - 40px);
+    padding: 30px;
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.learn-more-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.learn-more-item p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    background-color: rgba(0, 0, 0, 0.3); /* Slightly darker footer */
+    margin-top: 80px;
+    opacity: 1; /* Removed animation */
+    transform: translateY(0); /* Removed animation */
+}
+
+footer a {
+    color: #ff8a8a;
+}
+
+/* Predict Page Styles */
+.predict-container {
+    width: 90%; /* Make container responsive */
+    max-width: 500px; /* Slightly smaller for focus */
+    margin: 80px auto; /* More top margin */
+    background: rgba(255, 255, 255, 0.15); /* Slightly more opaque */
+    padding: 40px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+    border-radius: 12px;
+    text-align: center; /* Keep text centered within the container */
+    opacity: 1; /* Removed animation */
+}
+
+.predict-container h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.predict-container form {
+    margin-bottom: 30px;
+}
+
+/* Custom File Upload Button */
+.custom-file-upload {
+    display: inline-block;
+    padding: 16px 25px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff9f43, #ff7b00); /* Gradient button */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: pulse 1.5s ease-in-out infinite alternate;
+}
+
+.custom-file-upload i {
+    margin-right: 10px;
+}
+
+.custom-file-upload:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Hide the default file input */
+#file-input {
+    display: none;
+}
+
+/* Predict Button */
+.predict-btn {
+    padding: 16px 35px;
+    background: linear-gradient(45deg, #1dd1a1, #10ac84); /* Gradient button */
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: pulse 1.5s ease-in-out infinite alternate 0.2s;
+}
+
+.predict-btn i {
+    margin-right: 10px;
+}
+
+.predict-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Add spacing between buttons */
+.custom-file-upload, .predict-btn, .back-btn {
+    display: block; /* Places each button on a new line */
+    margin: 25px auto; /* Increased vertical spacing and centers them */
+    width: fit-content; /* Ensures buttons don't stretch too much */
+}
+
+/* Image Preview */
+.image-preview-area {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    opacity: 1; /* Removed animation */
+    transform: translateY(0); /* Removed animation */
+}
+
+.image-preview-area img.preview-image {
+    max-width: 100%; /* Make image responsive within its container */
+    max-height: 300px; /* Set a maximum height if needed */
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    object-fit: contain; /* Ensure the entire image is visible */
+    opacity: 1; /* Removed animation */
+    transform: translateY(0); /* Removed animation */
+}
+
+/* Prediction Result */
+.result {
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Initially hidden */
+}
+
+.result h2 {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.result img#uploaded-image {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    opacity: 0;
+}
+
+/* Back to Home Button on Predict Page */
+.back-btn {
+    padding: 14px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.back-btn i {
+    margin-right: 10px;
+}
+
+.back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade In Animation (Keeping for result display logic) */
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Slide In Animations */
+@keyframes slideInBottom {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; } /* Reduced initial translateY */
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Zoom In Animation */
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar .nav-links {
+        margin-top: 15px;
+        flex-direction: column;
+    }
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+    .how-it-works .steps,
+    .features,
+    .learn-more-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .how-it-works .step,
+    .features .feature-box,
+    .learn-more-item {
+        width: 80%;
+        margin: 20px 0;
+        text-align: center; /* Center text in learn more on smaller screens */
+    }
+    .hero h1 {
+        font-size: 40px;
+    }
+    .hero p {
+        font-size: 20px;
+    }
+    .predict-container {
+        margin-top: 50px;
+    }
+    .learn-more-item {
+        text-align: left; /* Reset text alignment for learn more */
+    }
+}
