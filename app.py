@@ -8,6 +8,10 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
+UPLOAD_FOLDER = "static/uploads"
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # Ensure directory exists with proper permissions
+
 # Load the trained model
 model = tf.keras.models.load_model("TB_Detection_ResNet50.h5")
 class_labels = ['Negative for Tuberculosis', 'Positive for Tuberculosis']
