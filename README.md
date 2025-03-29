@@ -29,7 +29,7 @@ The web-based interface allows users to:
 - **HTML, CSS, JavaScript** (Web UI development)
 
 ## 📸 Demo
-🎥 **Live Demo**: [Click Here](#) *(Deploy this project and update the link!)*
+🎥 **Live Demo**: [Click Here]((https://huggingface.co/spaces/TheGrandmaSlayer/tb-detection))
 
 ## 🏰 How It Works
 1. **User uploads a Chest X-ray image** on the prediction page.
