@@ -26,7 +26,7 @@ The web-based interface allows users to:
 - **TensorFlow/Keras** (Deep Learning framework)
 - **Flask** (Web framework for deployment)
 - **OpenCV & Pillow** (Image processing)
-- **HTML, CSS, JavaScript** (Web UI development)
+- **HTML, CSS,** (Web UI development)
 
 ## 📸 Demo
 🎥 **Live Demo**: [Click Here](https://huggingface.co/spaces/TheGrandmaSlayer/tb-detection)
